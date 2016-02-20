@@ -223,4 +223,12 @@ RSpec.describe AddressBook do
         end
         
     end
+    
+    describe "#nuke" do
+        it "delete all the entries from AddressBook" do
+            book.add_entry("Ben", "666", "aaa@aaa.com")
+            book.nuke
+            expect(book.entries.size).to eq 0
+        end
+    end
 end
