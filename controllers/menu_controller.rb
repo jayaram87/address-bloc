@@ -183,10 +183,12 @@ class MenuController
     
     def nuke
         index = 0
-        if index <= @address_book.entries.length - 1
-            @address_book.entries.delete(index)
+        @entries.each do |e|
+        if index <= @entries.length - 1
+            entry.delete
             index += 1
         end
+    end
     end
     
 end
