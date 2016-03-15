@@ -38,7 +38,7 @@ class MenuController
                 main_menu
             when 5
                 system "clear"
-                nuke
+                @address_book.nuke
                 main_menu
             when 6
                 puts "Good Bye"
@@ -138,7 +138,7 @@ class MenuController
         puts "#{entry.name} deleted"
     end
     
-   def edit_entry(entry)
+    def edit_entry(entry)
         
         print "Update Name"
         name = gets.chomp
@@ -180,13 +180,4 @@ class MenuController
         end
         
     end
-    
-    def nuke
-        index = 0
-        if index <= @address_book.entries.length - 1
-            @address_book.entries.delete(index)
-            index += 1
-        end
-    end
-    
 end
